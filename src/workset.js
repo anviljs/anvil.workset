@@ -5,14 +5,14 @@ module.exports = function( _, anvil ) {
 
 		configure: function( config, command, done ) {
 			var self = this;
-			anvil.events.on( "file.changed", function( change, path, base ) {
+			anvil.on( "file.changed", function( change, path, base ) {
 				if( base === anvil.config.spec ) {
 					self.handleSpecChange( path, base );
 				} else {
 					self.handleSourceChange( path, base );
 				}
 			} );
-			anvil.events.on( "file.deleted", function( change, path, base ) {
+			anvil.on( "file.deleted", function( change, path, base ) {
 				if( base === anvil.config.source ) {
 					self['delete']( path );
 				}
@@ -48,7 +48,7 @@ module.exports = function( _, anvil ) {
 			}
 			
 			this.traceDependents( file, function() {
-				anvil.events.raise( "rebuild", "combine" );
+				anvil.raise( "rebuild", "combine" );
 			} );
 		},
 
@@ -61,7 +61,7 @@ module.exports = function( _, anvil ) {
 				metadata = anvil.fs.buildFileData( base, anvil.config.working, path );
 				anvil.project.specs.push( metadata );
 			}
-			anvil.events.raise( "rebuild", "test" );
+			anvil.raise( "rebuild", "test" );
 		},
 
 		run: function( done ) {
