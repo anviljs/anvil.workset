@@ -65,7 +65,7 @@ module.exports = function( _, anvil ) {
 		},
 
 		run: function( done ) {
-			anvil.scheduler.parallel( anvil.project.files, this.copy, done );
+			anvil.scheduler.parallel( anvil.project.files, this.copy, function() { done(); } );
 		},
 
 		traceDependents: function( file, done ) {
