@@ -1,5 +1,5 @@
 module.exports = function( _, anvil ) {
-	return anvil.plugin( {
+	anvil.plugin( {
 		name: "anvil.workset",
 		activity: "pull",
 

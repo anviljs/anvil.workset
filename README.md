@@ -1,7 +1,7 @@
-## Anvil Workset Plugin
+## Anvil Workset Extension
 
-This plugin is a core component of anvil and is required to function as expected.
+A core component of anvil and is required to function as expected.
 
 ## Installation
 
-anvil will install this plugin during post-install.
+anvil will install this extension during post-install.

@@ -1,8 +1,8 @@
 {
   "author": "Alex Robson <alex@sharplearningcurve.com> (http://sharplearningcurve.com)",
   "name": "anvil.workset",
-  "description": "An anvil core plugin that manages the working set of files in a build",
-  "version": "0.0.4",
+  "description": "A core anvil extension that manages the working set of files in a build",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/arobson/anvil.workset.git"
